@@ -1,11 +1,16 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import type { ReactNode } from "react"
+type RevealObserverProps = {
+  children: ReactNode
+  animation?: string
+}
 
 export default function RevealObserver({
   children,
   animation = "fade-up",
-}) {
+}: RevealObserverProps) {
   const ref = useRef(null)
   const [show, setShow] = useState(false)
 
